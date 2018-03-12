@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TTT Maps</title>
+		<link rel="stylesheet" href="{{ url_for('tttmaps.static', filename='css/holo.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="main">
+			<div class="roundedTitleBox">TTT Map Reference Page</div>
+			<div class="roundedBox">
+				<div class="flexGrid">
+					{% for item in data %}
+						<div class="flexGridItem">
+							<img src="{{ item['thumbnail'] }}" /><br>
+							{{ item['name'] }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
