@@ -31,22 +31,6 @@ a:hover {
 a:active {
 	color: #2D9FC9;
 }
-button {
-	font-family: 'Open Sans', sans-serif;
-}
-.textbox {
-	background: white;
-	border-radius: 5px;
-	color: #303030;
-	outline: none;
-	border: none;
-	width: 66%;
-	height: 38px;
-	margin-right: 16px;
-	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
-	padding-left: 10px;
-}
 ::selection {
 	background: #FFFFFF;
 	color: #FFFFFF;
@@ -55,17 +39,9 @@ button {
 	background: #FFFFFF;
 	color: #FFFFFF;
 }
-.textbox::selection {
-	background: #4C4C4C;
-	color: #FFFFFF;
-}
-.textbox::-moz-selection {
-	background: #4C4C4C;
-	color: #FFFFFF;
-}
 .roundedBox {
 	color: #F5F5F5;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	border-radius: 5px;
 	background-color: #303030;
@@ -85,18 +61,6 @@ button {
 	padding-right: 35px;
 	margin: 10px;
 }
-.roundedBoxInnerTitle {
-	color: #33b5e5;
-	font-size: 32px;
-}
-.roundedBoxInnerSubtitle {
-	color: #33b5e5;
-	font-size: 24px;
-}
-hr {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
 .flexGrid {
 	display: flex;
 	flex-wrap: wrap;
@@ -105,4 +69,38 @@ hr {
 .flexGridItem {
 	margin: 5px 5px 10px 5px;
 	text-align: center;
+	width: 140px;
+	word-wrap: break-word;
+}
+.flexGridIcon {
+	width: 128px;
+	height: 128px;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	overflow: auto;
+	max-width: 80%;
+	max-height: 90%;
+	margin: auto;
+	top: 5%;
+	left: 10%;
+	background: #202020;
+	border-radius: 5px;
+	padding: 15px;
+}
+.screenshot {
+	width: 100%;
+}
+.screenshotCount {
+	background: #ffffff44;
+	color: $ffffffaa;
+	border-radius: 3px;
+	position: absolute;
+	top: 4px;
+	right: 10px;
+	z-index: 1;
+	padding-left: 2px;
+	padding-right: 2px;
 }

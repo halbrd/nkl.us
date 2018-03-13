@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>TTT Maps</title>
+		<title>TTT Map Reference</title>
 		<link rel="stylesheet" href="{{ url_for('tttmaps.static', filename='css/holo.css') }}">
+		<link rel="shortcut icon" href="{{ url_for('tttmaps.static', filename='favicon.ico') }}">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+			function showScreenshots(screenshotUrls) {
+				if (screenshotUrls.length > 0) {
+					var modal = document.getElementById('screenshotModal');
+					modal.style.display = 'block';
+					modal.innerHTML = screenshotUrls.map(url => '<img class="screenshot" src="' + url + '" />').join('<br>');
+				}
+			}
+
+			function hideScreenshots() {
+				for (modal of document.getElementsByClassName('modal')) {
+					modal.style.display = 'none';
+				}
+			}
+		</script>
 	</head>
 	<body>
+		<div id="screenshotModal" class="modal" onClick="hideScreenshots()"></div>
 		<div id="main">
-			<div class="roundedTitleBox">TTT Map Reference Page</div>
+			<div class="roundedTitleBox">TTT Map Reference</div>
 			<div class="roundedBox">
 				<div class="flexGrid">
-					{% for item in data %}
-						<div class="flexGridItem">
-							<img src="{{ item['thumbnail'] }}" /><br>
-							{{ item['name'] }}
+					{% for map in data %}
+						<div class="flexGridItem" onClick="showScreenshots({{ map['screenshots'] }})">
+							<div style="position: relative;">
+								<img src="{{ map['thumbnail'] }}" class="flexGridIcon" />
+								<div class="screenshotCount" {% if map['screenshots']|length < 2 %} style="display: none;" {% endif %} >{{ map['screenshots']|length }}</div>
+							</div>
+							<span>{{ map['name'] }}</span>
 						</div>
 					{% endfor %}
 				</div>
