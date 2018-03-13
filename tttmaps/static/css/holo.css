@@ -71,6 +71,7 @@ a:active {
 	text-align: center;
 	width: 140px;
 	word-wrap: break-word;
+	cursor: pointer;
 }
 .flexGridIcon {
 	width: 128px;

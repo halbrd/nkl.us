@@ -47,4 +47,6 @@ def index():
 
 		data.append(map_)
 
+	data.sort(key=lambda map: map['name'])
+
 	return render_template('index.html', data=data)
