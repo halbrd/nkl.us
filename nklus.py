@@ -1,12 +1,10 @@
 from flask import Flask, render_template
 
 from tttmaps.views import tttmaps
-from tedcruz.views import tedcruz
 
 app = Flask(__name__)
 
 app.register_blueprint(tttmaps, url_prefix='/tttmaps')
-app.register_blueprint(tedcruz, url_prefix='/tedcruz')
 
 @app.route('/')
 def index():
