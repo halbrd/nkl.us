@@ -8,7 +8,7 @@ app.register_blueprint(tttmaps, url_prefix='/tttmaps')
 
 @app.route('/')
 def index():
-	return 'Yep, Flask is working.'
+	return render_template('index.html')
 
 if __name__ == '__main__':
 	# as-is, the app will run in debug mode
