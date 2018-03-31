@@ -10,4 +10,4 @@ tedcruz = Blueprint('tedcruz', __name__,
 def index():
 	#print(requests.get('https://api.twitter.com/1.1/search/tweets.json?q=from%3Acommentiquette%20%40tedcruz&src=typd&lang=en'))
 
-	return render_template('index.html')
+	return render_template('tedcruz.html')

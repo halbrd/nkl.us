@@ -10,7 +10,7 @@ app.register_blueprint(tedcruz, url_prefix='/tedcruz')
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('nklus.html')
 
 if __name__ == '__main__':
 	# as-is, the app will run in debug mode
