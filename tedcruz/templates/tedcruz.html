@@ -10,7 +10,8 @@
 		</script>
 	</head>
 	<body>
-		<div id="main">
-		</div>
+		{% autoescape false %}
+			{{ data }}
+		{% endautoescape %}
 	</body>
 </html>
