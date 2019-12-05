@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 
 from tttmaps.views import tttmaps
+from music.views import music
 
 app = Flask(__name__)
 
 app.register_blueprint(tttmaps, url_prefix='/tttmaps')
+app.register_blueprint(music, url_prefix='/music')
 
 @app.route('/')
 def index():
